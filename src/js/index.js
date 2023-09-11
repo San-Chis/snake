@@ -10,7 +10,7 @@ type.fillStyle = 'white'
 type.font = '40px Arial'
 type.fillText('Press any key to start', canvas.width / 5, canvas.height / 2)
 
-// Додайте слухача подій для стартового екрану
+// Додаєм слухача подій для стартового екрану
 document.addEventListener('keydown', startGame)
 
 let gameStarted = false
@@ -18,8 +18,8 @@ let gameStarted = false
 function startGame(event) {
   // Якщо гра не розпочалася і гравець натиснув будь-яку клавішу
   if (!gameStarted) {
-    gameStarted = true // Позначте, що гра почалася
-    document.removeEventListener('keydown', startGame) // Видаліть слухача подій для стартового екрану
+    gameStarted = true
+    document.removeEventListener('keydown', startGame)
   }
 }
 
@@ -122,7 +122,6 @@ function drawGame() {
 
   // Перевіряємо, чи зіткнулася змійка зі своїм хвостом
   eatTail({ x: snakeX, y: snakeY }, snake)
-  //   eatTail(newHead, snake)
 
   // Додаємо нову голову в масив змійки
   snake.unshift(newHead)
